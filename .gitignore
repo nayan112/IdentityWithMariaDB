@@ -2,8 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/IdentityWithMariaDB/v16
+/.vs
 /.vs/IdentityWithMariaDB/DesignTimeBuild
 /IdentityWithMariaDB/bin/Debug/net5.0
 /IdentityWithMariaDB/obj
 /IdentityWithMariaDB/IdentityWithMariaDB.csproj.user
+/DBMigration/obj
+/DBMigration/bin

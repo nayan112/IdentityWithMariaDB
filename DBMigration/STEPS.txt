@@ -1,0 +1,29 @@
+﻿1. Open package manager console
+2. Change default project to DBMigration (in dropdown)
+3. Navigate to this folder through command
+4. If any change in DB table 
+	i.Update contextmodel for the DB changes (change password)
+
+	Scaffold-DbContext "Server=localhost;UserId=root;Password=;Database=migrationtest;SslMode=none;" MySql.EntityFrameworkCore -ContextDir Context -Context Context -OutputDir Model -f
+
+	ii. Generate migration script (Change name, eg. InitialDB)
+
+	dotnet ef migrations add 2ndSchema
+
+	iii. To remove this migration
+	Remove-Migration
+
+4. If any change in data
+	i. Create empty migration class
+	dotnet ef migrations add NewData
+	ii. add insert/update statement (for both up/down)
+5. Same can be used for manual DB changes also
+
+6. to apply migration
+dotnet ef database update
+
+
+Issues:
+1. Remove creation/deletetion statement for table __efmigrationshistory as it is part of migration already
+6. run test locally. Few fields may need correction based on d DB in use. eg. default null value for non string columns need to be fixed (remove manually)
+
